@@ -1,265 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Malik Dubai</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Ram Traders Club™ ( SEBI REGISTERED)</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1089448896066426');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1089448896066426&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-fbq('init','1153714410071909');
-fbq('track','PageView');
-</script>
+        body {
+            background-color: #051a14;
+            background: radial-gradient(circle at top center, #0c2b22 0%, #03120e 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
 
-<style>
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background: rgba(8, 28, 22, 0.85);
+            border: 1px solid rgba(46, 144, 107, 0.3);
+            border-radius: 28px;
+            padding: 28px 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(34, 197, 94, 0.05);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
+        /* Badge */
+        .top-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(46, 213, 115, 0.4);
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #2ed573;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            background: rgba(46, 213, 115, 0.05);
+        }
 
-body{
-font-family:Arial;
-background:#0b0f19;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-}
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #2ed573;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #2ed573;
+        }
 
-/* MAIN CARD */
+        /* Profile Avatar */
+        .avatar-container {
+            position: relative;
+            width: 125px;
+            height: 125px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #00ff87, #60efff);
+            box-shadow: 0 0 25px rgba(0, 255, 135, 0.4);
+            cursor: pointer;
+            display: inline-block;
+        }
 
-.container{
-width:380px;
-background:#111827;
-border-radius:25px;
-overflow:hidden;
-box-shadow:0 10px 40px rgba(0,0,0,0.6);
-}
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #081c16;
+            background: #11261f;
+            display: block;
+        }
 
-/* HEADER */
+        .upload-overlay {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background: #2ed573;
+            color: #000000;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            border: 2px solid #081c16;
+        }
 
-.header{
-background:linear-gradient(135deg,#6a5cff,#ff3cac);
-padding:30px;
-text-align:center;
-}
+        #fileInput {
+            display: none;
+        }
 
-.profile{
-width:110px;
-height:110px;
-border-radius:20px;
-object-fit:cover;
-animation:float 3s ease-in-out infinite;
-}
+        /* Title */
+        .name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
 
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-8px);}
-100%{transform:translateY(0px);}
-}
+        .name span {
+            color: #2ed573;
+        }
 
-.name{
-font-size:28px;
-font-weight:bold;
-margin-top:15px;
-}
+        .subtitle {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #f1c40f;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
 
-/* BADGES */
+        .description {
+            font-size: 0.88rem;
+            color: #a0aec0;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
 
-.badges{
-margin-top:12px;
-}
+        /* Timer Box */
+        .timer-box {
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px dashed #2ed573;
+            border-radius: 12px;
+            padding: 10px 15px;
+            font-size: 0.85rem;
+            color: #2ed573;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
 
-.badge{
-display:inline-block;
-padding:6px 14px;
-border-radius:20px;
-font-size:13px;
-margin:5px;
-}
+        .timer-box #count {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
 
-.premium{
-background:#8b5cf6;
-}
+        /* Button */
+        .main-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #2ed573 0%, #10ac84 100%);
+            color: #000000;
+            font-size: 1.05rem;
+            font-weight: 800;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(46, 213, 115, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
 
-.live{
-background:#22c55e;
-}
+        .sub-text {
+            font-size: 0.78rem;
+            color: #718096;
+            margin-bottom: 24px;
+        }
 
-/* MEMBERS */
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 14px;
+        }
 
-.members{
-margin-top:10px;
-font-size:15px;
-}
+        .stat-card {
+            background: rgba(15, 45, 36, 0.6);
+            border: 1px solid rgba(46, 144, 107, 0.25);
+            border-radius: 14px;
+            padding: 14px 8px;
+        }
 
-/* STATS */
+        .stat-val {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #2ed573;
+            margin-bottom: 2px;
+        }
 
-.stats{
-display:flex;
-gap:12px;
-padding:20px;
-}
+        .stat-lbl {
+            font-size: 0.75rem;
+            color: #a0aec0;
+        }
 
-.card{
-flex:1;
-padding:20px;
-border-radius:15px;
-text-align:center;
-font-weight:bold;
-}
+        /* Highlights */
+        .highlights-box {
+            background: rgba(15, 45, 36, 0.4);
+            border: 1px solid rgba(46, 144, 107, 0.2);
+            border-radius: 16px;
+            padding: 16px 14px;
+            text-align: left;
+            margin-bottom: 24px;
+        }
 
-.win{
-background:linear-gradient(45deg,#22c55e,#16a34a);
-}
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            color: #cbd5e0;
+            margin-bottom: 10px;
+        }
 
-.rating{
-background:linear-gradient(45deg,#f97316,#fb923c);
-}
+        .highlight-item:last-child {
+            margin-bottom: 0;
+        }
 
-/* TELEGRAM BUTTON */
+        /* Disclaimer */
+        .disclaimer {
+            font-size: 0.68rem;
+            color: #4a5568;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
 
-.telegram{
-margin:0 20px 20px;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-padding:16px;
-border-radius:15px;
-background:linear-gradient(90deg,#6366f1,#a855f7);
-color:white;
-font-weight:bold;
-text-decoration:none;
-font-size:16px;
-}
+        .managed-by {
+            font-size: 0.78rem;
+            color: #a0aec0;
+            border-top: 1px solid rgba(46, 144, 107, 0.2);
+            padding-top: 14px;
+        }
 
-.telegram img{
-width:20px;
-}
-
-/* FEATURES */
-
-.features{
-display:flex;
-justify-content:space-around;
-padding:20px;
-text-align:center;
-}
-
-.feature{
-font-size:13px;
-}
-
-.icon{
-width:45px;
-height:45px;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin:auto;
-margin-bottom:6px;
-font-size:20px;
-}
-
-.v{background:#22c55e;}
-.s{background:#3b82f6;}
-.p{background:#ec4899;}
-.t{background:#f59e0b;}
-
-/* FOOTER */
-
-.footer{
-text-align:center;
-padding:15px;
-font-size:13px;
-color:#9ca3af;
-}
-
-</style>
+        .managed-by a {
+            color: #2ed573;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <div class="container">
+        <div class="top-badge">
+            <span class="dot"></span> Official Channel
+        </div>
 
-<div class="header">
+        <!-- Profile Picture Header -->
+        <label for="fileInput" class="avatar-container">
+            <img class="avatar" id="profileImg" src="logo.png" alt="Shri Ram Traders Club Profile" onerror="this.onerror=null; this.src='https://via.placeholder.com/150/11261f/2ed573?text=Logo';">
+            <div class="upload-overlay">📷</div>
+        </label>
+        <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
 
-<img class="profile" src="logo.png">
+        <h1 class="name">Shri Ram Traders Club™ <span>(SEBI REGISTERED)</span></h1>
+        <div class="subtitle">✦ SIMPLE OBSERVATION CHANNEL ✦</div>
 
-<div class="name">MALIK DUBAI</div>
+        <p class="description">
+            This channel shares general understanding of situations and patterns over time.<br>
+            Content is for learning and awareness only.
+        </p>
 
-<div class="badges">
-<span class="badge premium">⭐ Premium Analyst</span>
-<span class="badge live">🔴 Live Updates</span>
-</div>
+        <div class="timer-box">
+            ⏳ Redirecting in <span id="count">10</span> seconds...
+        </div>
 
-<div class="members">👥 100k+ Active Members</div>
+        <a href="https://t.me/+hR2kzVdJw_Y4NDhl" id="telegramBtn" class="main-btn" target="_blank" onclick="trackLeadEvent()">
+            🚀 REQUEST TO JOIN CHANNEL
+        </a>
+        <div class="sub-text">🔒 Free Access • Learning & Awareness Only</div>
 
-</div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-val">1,245</div>
+                <div class="stat-lbl">Subscribers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">SEBI</div>
+                <div class="stat-lbl">Registered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">FREE</div>
+                <div class="stat-lbl">Join Now</div>
+            </div>
+        </div>
 
-<div class="stats">
+        <div class="highlights-box">
+            <div class="highlight-item"><span>🔥</span> Simple Observation & Educational Learning</div>
+            <div class="highlight-item"><span>⚡</span> Shares General Understanding of Situations & Patterns</div>
+            <div class="highlight-item"><span>🚀</span> Content is Strictly for Learning and Awareness Only</div>
+        </div>
 
-<div class="card win">
-96%<br>WIN RATE
-</div>
+        <p class="disclaimer">
+            No guarantees. No predictions. No advice. This page and its associated channel are strictly for educational and awareness purposes only.
+        </p>
 
-<div class="card rating">
-4.1 ⭐<br>RATING
-</div>
+        <div class="managed-by">
+            Ad Managed by <a href="https://t.me/+jE7sEbzR23gwM2U1" target="_blank">Kunal</a>
+        </div>
+    </div>
 
-</div>
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                document.getElementById('profileImg').src = reader.result;
+            };
+            if(event.target.files[0]) {
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        }
 
-<a class="telegram" href="https://t.me/">
+        function trackLeadEvent() {
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+                fbq('track', 'Subscribe');
+            }
+        }
 
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+        let timeLeft = 10;
+        const targetUrl = "https://t.me/+hR2kzVdJw_Y4NDhl";
+        const countDisplay = document.getElementById("count");
 
-Join Telegram Channel
-
-</a>
-
-<div class="features">
-
-<div class="feature">
-<div class="icon v">✔</div>
-Verified
-</div>
-
-<div class="feature">
-<div class="icon s">🔒</div>
-Secure
-</div>
-
-<div class="feature">
-<div class="icon p">📈</div>
-Profitable
-</div>
-
-<div class="feature">
-<div class="icon t">⭐</div>
-Top Rated
-</div>
-
-</div>
-
-<div class="footer">
-© 2026 Malik Dubai - All rights reserved.
-</div>
-
-</div>
-
+        const timer = setInterval(() => {
+            timeLeft--;
+            if (countDisplay) countDisplay.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                trackLeadEvent();
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
